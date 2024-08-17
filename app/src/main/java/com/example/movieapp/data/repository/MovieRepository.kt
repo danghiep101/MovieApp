@@ -1,8 +1,6 @@
 package com.example.movieapp.data.repository
 
-import androidx.lifecycle.LiveData
-import androidx.room.Insert
-import androidx.room.Query
+
 import com.example.movieapp.data.model.DetailModelResponse
 import com.example.movieapp.data.model.ModelResponse
 import com.example.movieapp.data.model.SearchMovieModelResponse
