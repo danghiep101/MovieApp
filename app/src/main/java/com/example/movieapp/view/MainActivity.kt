@@ -46,7 +46,6 @@ class MainActivity : AppCompatActivity() {
             override fun onTabReselected(tab: TabLayout.Tab?) {
             }
         })
-
         binding.tabLayout.getTabAt(0)?.select()
         supportFragmentManager.beginTransaction().replace(R.id.fragment_con_view, MoviesFragment())
             .commit()

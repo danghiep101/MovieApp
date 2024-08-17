@@ -1,9 +1,13 @@
 package com.example.movieapp.data.repository
 
+import androidx.lifecycle.LiveData
+import androidx.room.Insert
+import androidx.room.Query
 import com.example.movieapp.data.model.DetailModelResponse
 import com.example.movieapp.data.model.ModelResponse
 import com.example.movieapp.data.model.SearchMovieModelResponse
 import com.example.movieapp.data.resource.Result
+
 
 interface MovieRepository {
     suspend fun getMovie(page: Int, limit: Int): Result<ModelResponse>
@@ -14,5 +18,4 @@ interface MovieRepository {
     suspend fun getTvShows(page: Int, limit: Int): Result<ModelResponse>
 
     suspend fun getMovieFromSearching(keyword: String): Result<SearchMovieModelResponse>
-
 }

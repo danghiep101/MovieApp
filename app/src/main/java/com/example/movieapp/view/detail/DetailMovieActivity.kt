@@ -6,11 +6,14 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.example.movieapp.data.model.DetailModelResponse
 import com.example.movieapp.data.model.DetailModelResponse.Episode.ServerData
+import com.example.movieapp.data.repository.MovieRepositoryImp
 import com.example.movieapp.databinding.ActivityDetailMovieBinding
+import com.example.movieapp.utils.Extension
 import com.example.movieapp.view.adapter.SeriesRecyclerViewAdapter
 import com.example.movieapp.view.playmovie.PlayMovieActivity
 import com.example.movieapp.viewmodel.DetailMovieViewModel
@@ -18,15 +21,17 @@ import com.example.movieapp.viewmodel.DetailMovieViewModel
 
 class DetailMovieActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailMovieBinding
-    private val viewModel: DetailMovieViewModel  = DetailMovieViewModel()
+    private lateinit var viewModel: DetailMovieViewModel
     private var slug: String? = null
     private var movieType: String? = null
     private lateinit var adapter: SeriesRecyclerViewAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailMovieBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        viewModel = ViewModelProvider(this).get(DetailMovieViewModel::class.java)
 
         slug = intent.getStringExtra("SLUG")
         movieType = intent.getStringExtra("GENRE")
@@ -61,7 +66,6 @@ class DetailMovieActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView(episodes: List<ServerData>) {
-        Log.d("DetailMovieActivity", "Adapter Data: $episodes")
         adapter = SeriesRecyclerViewAdapter(episodes) { episode ->
             val intent = Intent(this@DetailMovieActivity, PlayMovieActivity::class.java).apply {
                 putExtra("LINK_PLAY_MOVIE", episode.linkM3u8)
@@ -72,7 +76,6 @@ class DetailMovieActivity : AppCompatActivity() {
         binding.recyclerViewSeries.layoutManager = LinearLayoutManager(this)
         binding.recyclerViewSeries.adapter = adapter
     }
-
 
 
     private fun bindData(detailModelResponse: DetailModelResponse) {

@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-parcelize")
+    alias(libs.plugins.devtool.ksp)
 }
 
 android {
@@ -34,7 +35,7 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 }
@@ -50,8 +51,14 @@ dependencies {
     implementation("androidx.media3:media3-ui:1.4.0")
 
     implementation("androidx.core:core:1.10.0")
-    implementation ("androidx.appcompat:appcompat:1.7.0")
-    implementation ("androidx.fragment:fragment-ktx:1.6.1")
+    implementation("androidx.appcompat:appcompat:1.7.0")
+    implementation("androidx.fragment:fragment-ktx:1.6.1")
+
+    //room
+    implementation(libs.room.ktx)
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
+    ksp(libs.room.compiler) // For Kotlin projects
 
 
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
@@ -60,7 +67,7 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.retrofit)
 
-    implementation (libs.github.glide)
+    implementation(libs.github.glide)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

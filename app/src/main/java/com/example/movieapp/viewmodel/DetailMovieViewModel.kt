@@ -1,5 +1,7 @@
 package com.example.movieapp.viewmodel
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,7 +13,9 @@ import com.example.movieapp.data.repository.MovieRepositoryImp
 import com.example.movieapp.data.resource.Result
 import kotlinx.coroutines.launch
 
-class DetailMovieViewModel(private val movieRepository: MovieRepository = MovieRepositoryImp()) : ViewModel() {
+class DetailMovieViewModel(
+    private val movieRepository: MovieRepository = MovieRepositoryImp(),
+) : ViewModel() {
 
     private val _movieDetail = MutableLiveData<DetailModelResponse?>()
     val movieDetail: LiveData<DetailModelResponse?> get() = _movieDetail
@@ -24,7 +28,6 @@ class DetailMovieViewModel(private val movieRepository: MovieRepository = MovieR
 
     private val _episodes = MutableLiveData<List<ServerData>>()
     val episodes: LiveData<List<ServerData>> = _episodes
-
 
     fun loadMovieDetail(slug: String) {
         _isLoading.value = true
@@ -44,5 +47,6 @@ class DetailMovieViewModel(private val movieRepository: MovieRepository = MovieR
     fun setMovieData(episodes: List<ServerData>) {
         _episodes.value = episodes
     }
+
 
 }
