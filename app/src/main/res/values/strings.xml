@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">MovieApp</string>
+    <string name="text_home">Home</string>
+    <string name="text_more">More</string>
+    <string name="text_search">Search</string>
+    <string name="text_movies">Movies</string>
+    <string name="text_movies_series">Movies Series</string>
+    <string name="text_cartoon">Cartoon</string>
+    <string name="text_tv_shows">TV Shows</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_movie_name">Movie name</string>
+    <string name="text_new_movies">New Movies</string>
+    <string name="text_2019">2019</string>
+    <string name="text_b_phim_xoay_quanh_cu_c_s_ng_c_a_ling_m_t_gi_o_vi_n_tr_ng_h_c_ph_i_i_m_t_v_i_t_nh_tr_ng_v_sinh_trong_khi_ph_i_ch_m_s_c_ng_i_cha_ch_ng_m_y_u_c_a_m_nh_nh_m_t_trong_nh_ng_h_c_sinh_c_a_ling_kok_wei_lun_ph_i_l_ng_c_trong_c_c_l_p_h_c_ti_ng_trung_b_sung_hai_ng_i_tr_n_n_th_n_thi_t_h_n_khi_wei_lun_ch_p_nh_n_s_k_m_c_p_th_m_c_a_ling">Bộ phim xoay quanh cuộc sống của Ling, một giáo viên trường học phải đối mặt với tình trạng vô sinh trong khi phải chăm sóc người cha chồng ốm yếu của mình ở nhà. Một trong những học sinh của Ling, Kok Wei Lun, đã phải lòng cô trong các lớp học tiếng Trung bổ sung. Hai người trở nên thân thiết hơn khi Wei Lun chấp nhận sự kèm cặp thêm của Ling.</string>
+    <string name="text_test_FHD">FHD</string>
+    <string name="text_90min">120 min</string>
+    <string name="text_favorite">Favorite</string>
+    <string name="text_vietsub">Vietsub</string>
+    <string name="text_share">Share</string>
+</resources>
