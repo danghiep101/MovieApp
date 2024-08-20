@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         binding.tabLayout.getTabAt(0)?.select()
         supportFragmentManager.beginTransaction().replace(R.id.fragment_con_view, MoviesFragment())
             .commit()
+
     }
 
 }
